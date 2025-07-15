@@ -31,34 +31,35 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-[#45715A]">
-      <div className="flex flex-col items-center w-full px-4">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-[#45715A] px-4">
+      <div className="flex flex-col items-center w-full max-w-2xl mx-auto">
         <h1
-          className="text-center font-sans"
+          className="text-center font-sans mb-8 leading-[1] break-words w-full
+            text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-[128px]
+            font-medium"
           style={{
             color: "#FFF",
             fontFamily: 'Satoshi Variable, Satoshi, Arial, Helvetica, sans-serif',
-            fontSize: "128px",
             fontStyle: "normal",
             fontWeight: 500,
-            lineHeight: "100%",
-            letterSpacing: "-7.68px",
-            marginBottom: "6rem", // Increased margin
+            letterSpacing: "-2px",
+            marginBottom: 0,
           }}
         >
           Save more<br />Waste less
         </h1>
-        <div className="mb-12">
+        <div className="mb-8 sm:mb-12 w-full">
           <span
+            className="block text-center w-full"
             style={{
               color: "#FFF",
               textAlign: "center",
               fontFamily: 'Fraunces, serif',
-              fontSize: "24px",
+              fontSize: "20px",
               fontStyle: "normal",
               fontWeight: 400,
               lineHeight: "100%",
-              letterSpacing: "-1.44px",
+              letterSpacing: "-1.2px",
               display: "block",
             }}
           >
@@ -73,14 +74,13 @@ export default function Home() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="w-full px-4 py-3 border border-white bg-transparent text-white rounded-none focus:outline-none focus:ring-2 focus:ring-white text-base transition text-center"
+                className="w-full px-4 py-3 border border-white bg-transparent text-white rounded-none focus:outline-none focus:ring-2 focus:ring-white text-base transition text-center text-[16px] sm:text-[18px]"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 required
                 disabled={loading}
                 style={{
                   fontFamily: 'Satoshi Variable, Satoshi, Arial, Helvetica, sans-serif',
-                  fontSize: "18px",
                   fontStyle: "normal",
                   fontWeight: 500,
                   lineHeight: "100%",
@@ -95,11 +95,16 @@ export default function Home() {
                   color: rgba(225, 225, 225, 0.32) !important;
                   text-align: center;
                   font-family: 'Satoshi Variable', Satoshi, Arial, Helvetica, sans-serif;
-                  font-size: 18px;
+                  font-size: 16px;
                   font-style: normal;
                   font-weight: 500;
                   line-height: 100%;
                   letter-spacing: -1.44px;
+                }
+                @media (min-width: 640px) {
+                  input::placeholder {
+                    font-size: 18px;
+                  }
                 }
               `}</style>
               <button
