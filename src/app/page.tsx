@@ -31,35 +31,33 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-[#45715A] px-4">
-      <div className="flex flex-col items-center w-full max-w-2xl mx-auto">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-[#45715A] px-2">
+      <div className="flex flex-col items-center w-full px-4">
         <h1
-          className="text-center font-sans mb-8 leading-[1] break-words w-full
-            text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-[128px]
-            font-medium"
+          className="text-center font-sans mb-10 leading-[1] w-full text-3xl sm:text-[128px] font-medium sm:tracking-[-0.48em]"
           style={{
             color: "#FFF",
             fontFamily: 'Satoshi Variable, Satoshi, Arial, Helvetica, sans-serif',
             fontStyle: "normal",
             fontWeight: 500,
-            letterSpacing: "-2px",
-            marginBottom: 0,
+            lineHeight: "100%",
+            letterSpacing: "-2px", // Tighter for mobile only
+            marginBottom: "6rem",
           }}
         >
           Save more<br />Waste less
         </h1>
         <div className="mb-8 sm:mb-12 w-full">
           <span
-            className="block text-center w-full"
+            className="block text-center w-full text-lg sm:text-[24px] sm:tracking-[-0.09em]"
             style={{
               color: "#FFF",
               textAlign: "center",
               fontFamily: 'Fraunces, serif',
-              fontSize: "20px",
               fontStyle: "normal",
               fontWeight: 400,
               lineHeight: "100%",
-              letterSpacing: "-1.2px",
+              letterSpacing: "-0.5px", // Tighter for mobile only
               display: "block",
             }}
           >
@@ -69,12 +67,12 @@ export default function Home() {
         {submitted ? (
           <div className="text-white text-center mt-4">Thank you for joining the waitlist!</div>
         ) : (
-          <form onSubmit={handleSubmit} className="w-full max-w-md flex flex-col items-center">
-            <div className="w-full flex flex-row items-center justify-center relative">
+          <form onSubmit={handleSubmit} className="w-full flex flex-col items-center">
+            <div className="w-full flex flex-row items-center justify-center relative max-w-xs sm:max-w-md">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="w-full px-4 py-3 border border-white bg-transparent text-white rounded-none focus:outline-none focus:ring-2 focus:ring-white text-base transition text-center text-[16px] sm:text-[18px]"
+                className="w-full px-2 py-2 sm:px-4 sm:py-3 border border-white bg-transparent text-white rounded-none focus:outline-none focus:ring-2 focus:ring-white text-base transition text-center text-sm sm:text-[18px]"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 required
@@ -95,7 +93,7 @@ export default function Home() {
                   color: rgba(225, 225, 225, 0.32) !important;
                   text-align: center;
                   font-family: 'Satoshi Variable', Satoshi, Arial, Helvetica, sans-serif;
-                  font-size: 16px;
+                  font-size: 14px;
                   font-style: normal;
                   font-weight: 500;
                   line-height: 100%;
